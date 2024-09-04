@@ -11,7 +11,7 @@ class Product
     public $type;
 
     // passando le proprietà al costruttore rendo obbligatori determinati dati
-    public function __construct(string $_title, float $_price, string $_image, string $_category, string $_type)
+    public function __construct(string $_title, float $_price, string $_image, Category $_category, string $_type)
     {
         $this->title = $_title;
         $this->price = $_price;
