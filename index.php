@@ -20,13 +20,30 @@ require_once __DIR__ . '/data/db.php';
 <body>
     <div class="container my-5">
         <div class="row">
-            <h1 class="text-bg-success p-3">Movie List</h1>
-            <?php foreach ($products as $produtc): ?>
-                <div class="card" style="width: 18rem;">
-                    <img src="..." class="card-img-top" alt="...">
+            <h1 class="text-bg-success p-3">Product list</h1>
+            <?php foreach ($products as $product): ?>
+                <div class="card col-4">
+                    <img src="<?php echo $product->image ?>" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
+                        <h5 class="card-title"><?php echo $product->getTitle() ?></h5>
+                        <h6 class="card-subtitle"><?php echo $product->price ?>&euro;</h6>
                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <?php if ($product->type == 'food'): ?>
+                            <div>
+                                <?php
+                                echo 'Peso: ' . $product->weight . 'kg<br>';
+                                echo 'Data di scadenza: ' . $product->expirationDate;
+                                ?>
+                            </div>
+                        <?php endif; ?>
+                        <?php if ($product->type == 'toy'): ?>
+                            <div>
+                                <?php
+                                echo 'Materiale: ' . $product->material . '<br>';
+                                echo 'Dimensione: ' . $product->size;
+                                ?>
+                            </div>
+                        <?php endif; ?>
                     </div>
                 </div>
             <?php endforeach; ?>
