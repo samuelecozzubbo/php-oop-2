@@ -26,7 +26,7 @@ require_once __DIR__ . '/data/db.php';
                     <img src="<?php echo $product->image ?>" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $product->getTitle() ?></h5>
-                        <h6 class="card-subtitle"><?php echo $product->price ?>&euro;</h6>
+                        <h6 class="card-subtitle"><?php echo $product->getPrice() ?>&euro;</h6>
                         <p><?php echo 'Categoria' . $product->category->name . '<br>'; ?></p>
                         <?php if ($product->type == 'food'): ?>
                             <div>

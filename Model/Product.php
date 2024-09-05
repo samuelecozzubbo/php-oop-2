@@ -5,7 +5,7 @@ class Product
 {
     // proprità obbligatorie
     protected $title;
-    public $price;
+    protected $price;
     public $image;
     public $category;
     public $type;
@@ -14,12 +14,12 @@ class Product
     public function __construct(string $_title, float $_price, string $_image, Category $_category, string $_type)
     {
         $this->setTitle($_title);
-        $this->price = $_price;
+        $this->setPrice($_price);
         $this->image = $_image;
         $this->category = $_category;
         $this->type = $_type;
     }
-
+    //TITLE GETTER AND SETTER
     public function getTitle()
     {
         return $this->title;
@@ -33,6 +33,21 @@ class Product
             throw new Exception('Il titolo deve contenere almeno 3 caratteri');
         } else {
             $this->title = $_title;
+        }
+    }
+
+    //PRICE GETTER AND SETTER
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    public function setPrice($_price)
+    {
+        if (!is_numeric($_price)) {
+            throw new Exception('Il prezzo deve essere un numero');
+        } else {
+            $this->price = $_price;
         }
     }
 }
