@@ -27,7 +27,7 @@ require_once __DIR__ . '/data/db.php';
                     <div class="card-body">
                         <h5 class="card-title"><?php echo $product->getTitle() ?></h5>
                         <h6 class="card-subtitle"><?php echo $product->price ?>&euro;</h6>
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <p><?php echo 'Categoria' . $product->category->name . '<br>'; ?></p>
                         <?php if ($product->type == 'food'): ?>
                             <div>
                                 <?php

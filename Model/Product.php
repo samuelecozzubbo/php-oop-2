@@ -27,6 +27,12 @@ class Product
 
     public function setTitle($_title)
     {
-        $this->title = $_title;
+        // controllo di name
+        // // se tutto ok assegno il valore
+        if (empty($_title) || (strlen($_title) < 3)) {
+            throw new Exception('Il titolo deve contenere almeno 3 caratteri');
+        } else {
+            $this->title = $_title;
+        }
     }
 }

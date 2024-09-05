@@ -3,11 +3,11 @@
 class Category
 {
     public $name;
-    public $icon;
+    public $description;
 
     public function __construct(string $_name, string $_description)
     {
         $this->name = $_name;
-        $this->icon = $_description;
+        $this->description = $_description;
     }
 }
